@@ -1,0 +1,2 @@
+# WechatLikeBottomTabUI
+抄袭微信Android6.0版本底部菜单渐变效果
