@@ -46,10 +46,10 @@ public class MainBottomTabLayout extends LinearLayout {
 
     public MainBottomTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs, defStyleAttr);
+        init();
     }
 
-    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+    private void init() {
         mColorEvaluator = new ArgbEvaluator();
         mTextNormalColor = getResources().getColor(R.color.main_bottom_tab_textcolor_normal);
         mTextSelectedColor = getResources().getColor(R.color.main_bottom_tab_textcolor_selected);
