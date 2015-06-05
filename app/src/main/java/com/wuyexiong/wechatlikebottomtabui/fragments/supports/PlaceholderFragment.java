@@ -2,6 +2,7 @@ package com.wuyexiong.wechatlikebottomtabui.fragments.supports;
 
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.wuyexiong.wechatlikebottomtabui.TestFragmentAdapter;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class PlaceholderFragment extends android.support.v4.app.Fragment {
+public class PlaceholderFragment extends Fragment {
 
     private TestFragmentAdapter mAdapter;
     private ViewPager mPager;
