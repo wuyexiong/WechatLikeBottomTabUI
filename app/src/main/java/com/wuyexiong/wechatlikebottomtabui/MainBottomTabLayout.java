@@ -56,6 +56,7 @@ public class MainBottomTabLayout extends LinearLayout {
     }
 
     public void setViewPager(ViewPager viewPager) {
+        //remove the previous views if there are
         removeAllViews();
         mViewPager = viewPager;
         if (viewPager != null && viewPager.getAdapter() != null) {
@@ -67,6 +68,7 @@ public class MainBottomTabLayout extends LinearLayout {
     private void populateTabLayout() {
         final PagerAdapter adapter = mViewPager.getAdapter();
         final OnClickListener tabClickListener = new TabClickListener();
+
         mIconLayouts = new View[adapter.getCount()];
 
         for (int i = 0; i < adapter.getCount(); i++) {
@@ -195,7 +197,8 @@ public class MainBottomTabLayout extends LinearLayout {
         public void onClick(View v) {
             for (int i = 0; i < getChildCount(); i++) {
                 if (v == getChildAt(i)) {
-                    mViewPager.setCurrentItem(i, false);
+                    //set clicked item and smoothScroll == true
+                    mViewPager.setCurrentItem(i, true);
                     return;
                 }
             }
