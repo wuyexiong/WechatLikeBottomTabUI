@@ -1,7 +1,7 @@
 package com.wuyexiong.wechatlikebottomtabui.fragments;
 
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +18,7 @@ public class DiscoverFragment extends Fragment {
     public DiscoverFragment() {
         // Required empty public constructor
     }
+
     public static DiscoverFragment newInstance() {
         DiscoverFragment fragment = new DiscoverFragment();
         return fragment;
