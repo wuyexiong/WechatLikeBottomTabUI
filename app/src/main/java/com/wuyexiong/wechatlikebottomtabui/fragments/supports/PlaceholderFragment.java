@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 
 import com.wuyexiong.wechatlikebottomtabui.MainBottomTabLayout;
 import com.wuyexiong.wechatlikebottomtabui.R;
-import com.wuyexiong.wechatlikebottomtabui.TestFragmentAdapter;
+import com.wuyexiong.wechatlikebottomtabui.Adapters.BottomTabFragmentAdapter;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class PlaceholderFragment extends Fragment {
 
-    private TestFragmentAdapter mAdapter;
+    private BottomTabFragmentAdapter mAdapter;
     private ViewPager mPager;
     private MainBottomTabLayout mTabLayout;
 
@@ -33,7 +33,7 @@ public class PlaceholderFragment extends Fragment {
     }
 
     private void setupViews(View view) {
-        mAdapter = new TestFragmentAdapter(getFragmentManager());
+        mAdapter = new BottomTabFragmentAdapter(getFragmentManager());
         mPager = (ViewPager) view.findViewById(R.id.bottom_tab_pager);
         mPager.setAdapter(mAdapter);
         mTabLayout = (MainBottomTabLayout) view.findViewById(R.id.main_bottom_tab_layout);
