@@ -26,7 +26,14 @@ public class MainBottomTabLayout extends LinearLayout {
     private int mSelectedPosition;
     private float mSelectionOffset;
 
-    private String mTitles[] = {"微信", "通讯录", "发现", "我"};
+    private Context context = WechatLikeBottomTabUIApplication.getContext();
+
+    private String mTitles[] = {
+            getResources().getString(R.string.chats),
+            getResources().getString(R.string.contacts),
+            getResources().getString(R.string.discover),
+            getResources().getString(R.string.me)};
+
     private int mIconRes[][] = {
         {R.drawable.icon_main_home_normal, R.drawable.icon_main_home_selected},
         {R.drawable.icon_main_category_normal, R.drawable.icon_main_category_selected},
@@ -46,16 +53,17 @@ public class MainBottomTabLayout extends LinearLayout {
 
     public MainBottomTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs, defStyleAttr);
+        init();
     }
 
-    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+    private void init() {
         mColorEvaluator = new ArgbEvaluator();
         mTextNormalColor = getResources().getColor(R.color.main_bottom_tab_textcolor_normal);
         mTextSelectedColor = getResources().getColor(R.color.main_bottom_tab_textcolor_selected);
     }
 
     public void setViewPager(ViewPager viewPager) {
+        //remove the previous views if there are
         removeAllViews();
         mViewPager = viewPager;
         if (viewPager != null && viewPager.getAdapter() != null) {
@@ -67,6 +75,7 @@ public class MainBottomTabLayout extends LinearLayout {
     private void populateTabLayout() {
         final PagerAdapter adapter = mViewPager.getAdapter();
         final OnClickListener tabClickListener = new TabClickListener();
+
         mIconLayouts = new View[adapter.getCount()];
 
         for (int i = 0; i < adapter.getCount(); i++) {
@@ -195,7 +204,8 @@ public class MainBottomTabLayout extends LinearLayout {
         public void onClick(View v) {
             for (int i = 0; i < getChildCount(); i++) {
                 if (v == getChildAt(i)) {
-                    mViewPager.setCurrentItem(i, false);
+                    //set clicked item and smoothScroll == true
+                    mViewPager.setCurrentItem(i, true);
                     return;
                 }
             }

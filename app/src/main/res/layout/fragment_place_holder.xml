@@ -5,13 +5,13 @@
     tools:context=".MainActivity$PlaceholderFragment">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/tab_pager"
+        android:id="@+id/bottom_tab_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/main_bottom_tablayout" />
+        android:layout_above="@+id/main_bottom_tab_layout" />
 
     <com.wuyexiong.wechatlikebottomtabui.MainBottomTabLayout
-        android:id="@+id/main_bottom_tablayout"
+        android:id="@+id/main_bottom_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"

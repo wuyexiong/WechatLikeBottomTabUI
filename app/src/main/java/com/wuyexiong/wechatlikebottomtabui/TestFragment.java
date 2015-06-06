@@ -15,6 +15,7 @@ import android.widget.TextView;
  */
 public class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
+    private String mContent = "???";
 
     public static TestFragment newInstance(String content) {
         TestFragment fragment = new TestFragment();
@@ -29,7 +30,6 @@ public class TestFragment extends Fragment {
         return fragment;
     }
 
-    private String mContent = "???";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class TestFragment extends Fragment {
         text.setPadding(20, 20, 20, 20);
 
         LinearLayout layout = new LinearLayout(getActivity());
-        layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT));
+        layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
         layout.setGravity(Gravity.CENTER);
         layout.addView(text);
 
