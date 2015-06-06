@@ -10,6 +10,7 @@ import com.wuyexiong.wechatlikebottomtabui.fragments.supports.PlaceholderFragmen
 
 public class MainActivity extends ActionBarActivity {
 
+    private MainActivity mainActivity = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

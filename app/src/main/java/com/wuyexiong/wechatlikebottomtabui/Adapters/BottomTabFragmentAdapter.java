@@ -5,7 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
 
-import com.wuyexiong.wechatlikebottomtabui.fragments.ChatFragment;
+import com.wuyexiong.wechatlikebottomtabui.MainActivity;
+import com.wuyexiong.wechatlikebottomtabui.R;
+import com.wuyexiong.wechatlikebottomtabui.WechatLikeBottomTabUIApplication;
+import com.wuyexiong.wechatlikebottomtabui.fragments.ChatsFragment;
 import com.wuyexiong.wechatlikebottomtabui.fragments.ContactFragment;
 import com.wuyexiong.wechatlikebottomtabui.fragments.DiscoverFragment;
 import com.wuyexiong.wechatlikebottomtabui.fragments.MeFragment;
@@ -16,8 +19,10 @@ import com.wuyexiong.wechatlikebottomtabui.fragments.MeFragment;
 public class BottomTabFragmentAdapter extends FragmentPagerAdapter {
 
     private final String LOG_TAG = BottomTabFragmentAdapter.class.getSimpleName();
-    private final int CHAT = 0;
-    private final int CONTACT = 1;
+    private MainActivity mainActivity;
+
+    private final int CHATS = 0;
+    private final int CONTACTS = 1;
     private final int DISCOVER = 2;
     private final int ME = 3;
 
@@ -31,9 +36,9 @@ public class BottomTabFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case CHAT:
-                return ChatFragment.newInstance();
-            case CONTACT:
+            case CHATS:
+                return ChatsFragment.newInstance();
+            case CONTACTS:
                 return ContactFragment.newInstance();
             case DISCOVER:
                 return DiscoverFragment.newInstance();
@@ -42,7 +47,7 @@ public class BottomTabFragmentAdapter extends FragmentPagerAdapter {
             default:
                 Log.e(LOG_TAG, "Selected not validate bottom tab");
         }
-        return ChatFragment.newInstance();
+        return ChatsFragment.newInstance();
     }
 
     @Override
@@ -52,7 +57,19 @@ public class BottomTabFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return BottomTabFragmentAdapter.CONTENT[position % CONTENT.length];
+        switch (position){
+            case CHATS:
+                return WechatLikeBottomTabUIApplication.getContext().getString(R.string.chats);
+            case CONTACTS:
+                return WechatLikeBottomTabUIApplication.getContext().getString(R.string.contacts);
+            case DISCOVER:
+                return WechatLikeBottomTabUIApplication.getContext().getString(R.string.discover);
+            case ME:
+                return WechatLikeBottomTabUIApplication.getContext().getString(R.string.me);
+            default:
+                Log.e(LOG_TAG, "Selected not validate bottom tab");
+        }
+        return "Title";
     }
 
     public void setCount(int count) {

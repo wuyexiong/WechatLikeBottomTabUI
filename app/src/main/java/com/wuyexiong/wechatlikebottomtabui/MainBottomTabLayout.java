@@ -26,7 +26,14 @@ public class MainBottomTabLayout extends LinearLayout {
     private int mSelectedPosition;
     private float mSelectionOffset;
 
-    private String mTitles[] = {"微信", "通讯录", "发现", "我"};
+    private Context context = WechatLikeBottomTabUIApplication.getContext();
+
+    private String mTitles[] = {
+            getResources().getString(R.string.chats),
+            getResources().getString(R.string.contacts),
+            getResources().getString(R.string.discover),
+            getResources().getString(R.string.me)};
+
     private int mIconRes[][] = {
         {R.drawable.icon_main_home_normal, R.drawable.icon_main_home_selected},
         {R.drawable.icon_main_category_normal, R.drawable.icon_main_category_selected},

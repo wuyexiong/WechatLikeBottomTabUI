@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WechatLikeBottomTabUI</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contacts">通讯录</string>
+    <string name="discover">发现</string>
+    <string name="chats">微信</string>
+    <string name="me">我</string>
+</resources>

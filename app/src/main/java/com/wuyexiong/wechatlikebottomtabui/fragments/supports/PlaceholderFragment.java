@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wuyexiong.wechatlikebottomtabui.MainActivity;
 import com.wuyexiong.wechatlikebottomtabui.MainBottomTabLayout;
 import com.wuyexiong.wechatlikebottomtabui.R;
 import com.wuyexiong.wechatlikebottomtabui.Adapters.BottomTabFragmentAdapter;
@@ -17,10 +18,12 @@ import com.wuyexiong.wechatlikebottomtabui.Adapters.BottomTabFragmentAdapter;
  */
 public class PlaceholderFragment extends Fragment {
 
+    private MainActivity mainActivity;
     private BottomTabFragmentAdapter mAdapter;
     private ViewPager mPager;
     private MainBottomTabLayout mTabLayout;
 
+    //Empty constructor needed
     public PlaceholderFragment() {
     }
 

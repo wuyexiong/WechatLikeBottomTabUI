@@ -12,15 +12,15 @@ import com.wuyexiong.wechatlikebottomtabui.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ChatFragment extends Fragment {
+public class ChatsFragment extends Fragment {
 
 
-    public ChatFragment() {
+    public ChatsFragment() {
         // Required empty public constructor
     }
 
-    public static ChatFragment newInstance() {
-        ChatFragment fragment = new ChatFragment();
+    public static ChatsFragment newInstance() {
+        ChatsFragment fragment = new ChatsFragment();
         return fragment;
     }
 
